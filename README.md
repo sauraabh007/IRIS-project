@@ -58,7 +58,7 @@ Users can view Accounts in a paginated table, sort by columns, search by Account
 
 ## Apex Controller
 
-The Apex Controller (`AccountController.apxc`) includes methods for:
+The Apex Controller (`AccountController.cls`) includes methods for:
     - Retrieving Account records based on search, sort, and pagination options.
     - Fetching picklist values for the Industry field.
     - Saving updated Account records back to Salesforce.

@@ -29,7 +29,7 @@ Users can view Accounts in a paginated table, sort by columns, search by Account
 - **Pagination**: Displays Accounts in pages of 10 records, allowing easy navigation and page number.
 - **Sorting**: Columns (e.g., Account Name, Industry, Annual Revenue) can be sorted.
 - **Search**: Includes a search box to filter records by Account Name.
-- **Inline Editing**: Users can edit the **Annual Revenue** (currency).
+- **Inline Editing**: Users can edit the **Annual Revenue** (currency). **Industry** field can also be made editable via HTML by removing 'disabled=true' tag
 - **Save to Salesforce**: After editing, users can save the updated records to Salesforce with a single click.
 - **Loading Overlay**: Disables the screen and displays a spinner while saving or loading data.
 - **Error Handling**: Displays an error message as a toast notification if the save operation fails.
@@ -74,7 +74,7 @@ The Apex Controller (`AccountController.apxc`) includes methods for:
   The LWC (`AccountDataTable`) handles:
   - **Data Fetching**: Fetches Accounts and picklist values from the Apex controller.
   - **Sorting and Pagination**: Allows users to navigate and sort Account records.
-  - **Inline Editing**: Updates the **Industry** (picklist) and **Annual Revenue** (currency) fields directly in the table.
+  - **Inline Editing**: Updates the **Annual Revenue** (currency) fields directly in the table.
   - **Save Operation**: Triggers save and displays a loading overlay with a spinner during the save process.
   - **Error Handling**: Displays errors at the top of the page in a toast notification if saving fails.
 

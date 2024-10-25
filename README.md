@@ -1,6 +1,25 @@
 # IRIS-project
 Given to IRIS for first interview round
 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Task: Build a Custom Data Table with Pagination and Sorting in LWC
+Objective: Create a Lightning Web Component that displays a list of Accounts in a
+custom data table format with the following functionality:
+1. Users can navigate through the list in pages of 10 records.
+2. Users can sort columns (e.g., Account Name, Industry, and Annual Revenue)
+in ascending and descending order.
+3. Include a search box to filter the records by Account Name.
+4. Allow users to edit the Annual Revenue inline directly within the table.
+5. After editing, the user should be able to save the updated records to
+Salesforce using a button.
+Requirements:
+ Use LWC to implement the component.
+ Fetch data from the Account object in Salesforce using Apex.
+ Implement error handling for the data fetch and save operations.
+ Ensure the component is responsive and user-friendly.
+ Use CSS or SLDS for basic styling.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 # Account Data Table LWC
 
 This Lightning Web Component (LWC) provides a custom, paginated, editable data table for displaying and managing Salesforce Account records. 

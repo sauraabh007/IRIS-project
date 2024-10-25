@@ -42,7 +42,7 @@ Users can view Accounts in a paginated table, sort by columns, search by Account
    - **AccountDataTable.js**
    - **AccountDataTable.css**
    - **AccountController.apxc** (Apex Controller)
-3. Create a new 'Lightning Component Tabs with content as 'accountTable'. And add the tab to required App.
+3. Create a new Lightning Component Tab's with content as 'accountTable'. And add the tab to required App.
 
 ## File Structure
 
@@ -89,7 +89,7 @@ The Apex Controller (`AccountController.apxc`) includes methods for:
   
 ## After deployment, use the following steps: ##
 
-  1. Create a new 'Lightning Component Tabs with content as 'accountTable'. > Save
+  1. Create a new Lightning Component Tabs with content as 'accountTable'. > Save
   2. Navigate to the desired app via Setup. And add the tab to required App.
 
 ### Component Attributes
@@ -106,3 +106,9 @@ The Apex Controller (`AccountController.apxc`) includes methods for:
 
   - Adjust pagination size by updating the `pageSize` variable.
   - To add more columns or fields, update the `columns` definition in `AccountDataTable.js` and modify the Apex `getAccounts` query accordingly.
+
+## Assumptions
+   1. Assuming the LWC component would be used as a tab along with other objects. Although, it can be modified to be triggered from any component. e.g: quick action.
+   2. Assuming number of account records is nominal to handle via regulr SOQL and does not hit Governer limits.
+   3. Assuming the user has appropriate permission to edit account records (ran via Admin for demo).
+   4. Assuming errors are to be displaye in a tost on page.

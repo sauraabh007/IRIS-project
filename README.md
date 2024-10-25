@@ -1,5 +1,4 @@
 # IRIS-project
-Given to IRIS for first interview round
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Task: Build a Custom Data Table with Pagination and Sorting in LWC

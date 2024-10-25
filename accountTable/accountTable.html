@@ -65,6 +65,7 @@
         <div class="slds-m-top_medium slds-grid slds-grid_align-spread">
             <lightning-layout-item flexibility="auto">
                 <lightning-button
+                    class="slds-m-left_xx-large"
                     label="< Previous"
                     onclick={handlePreviousPage}
                     disabled={isFirstPage}
@@ -82,15 +83,13 @@
             </lightning-layout-item>
             <lightning-layout-item flexibility="auto">
                 <lightning-button
+                    class="slds-m-right_xx-large"
                     label="Next >"
                     onclick={handleNextPage}
                     disabled={isLastPage}
                     variant="brand-outline"
                 ></lightning-button>
             </lightning-layout-item>
-            <!--lightning-layout-item flexibility="auto">
-                    Page {pageNumber}
-            </lightning-layout-item-->
         </div>
         <!-- Bottom error message display if save fails -->
         <!--div class="error-message">

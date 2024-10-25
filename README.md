@@ -29,7 +29,7 @@ Users can view Accounts in a paginated table, sort by columns, search by Account
 ## File Structure
 
   ```
-  AccountDataTable
+  accountTable/lwc/accountTable
     AccountDataTable.html      # HTML structure of the LWC component
     AccountDataTable.js        # JavaScript logic, data handling, and Apex calls
     AccountDataTable.css       # Custom styling for the component

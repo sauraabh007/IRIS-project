@@ -108,7 +108,8 @@ The Apex Controller (`AccountController.apxc`) includes methods for:
   - To add more columns or fields, update the `columns` definition in `AccountDataTable.js` and modify the Apex `getAccounts` query accordingly.
 
 ## Assumptions
-   1. Assuming the LWC component would be used as a tab along with other objects. Although, it can be modified to be triggered from any component. e.g: quick action.
-   2. Assuming number of account records is nominal to handle via regulr SOQL and does not hit Governer limits.
-   3. Assuming the user has appropriate permission to edit account records (ran via Admin for demo).
-   4. Assuming errors are to be displaye in a tost on page.
+   1. Assuming sort works on the whole table rather than a particular page
+   2. Assuming the LWC component would be used as a tab along with other objects. Although, it can be modified to be triggered from any component. e.g: quick action.
+   3. Assuming number of account records is nominal to handle via regulr SOQL and does not hit Governer limits.
+   4. Assuming the user has appropriate permission to edit account records (ran via Admin for demo).
+   5. Assuming errors are to be displaye in a tost on page. 

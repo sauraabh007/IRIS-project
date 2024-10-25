@@ -41,7 +41,7 @@ Users can view Accounts in a paginated table, sort by columns, search by Account
    - **AccountDataTable.html**
    - **AccountDataTable.js**
    - **AccountDataTable.css**
-   - **AccountController.apxc** (Apex Controller)
+   - **AccountController.cls** (Apex Controller)
 3. Create a new Lightning Component Tab's with content as 'accountTable'. And add the tab to required App.
 
 ## File Structure
@@ -53,7 +53,7 @@ Users can view Accounts in a paginated table, sort by columns, search by Account
     AccountDataTable.css       # Custom styling for the component
     accountTable.js-meta.xml   # Defines the targets where LWC component can be used
   
-  AccountController.apxc     # Apex Controller for handling data retrieval and save operations
+  AccountController.cls     # Apex Controller for handling data retrieval and save operations
   ```
 
 ## Apex Controller

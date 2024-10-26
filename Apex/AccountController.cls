@@ -37,7 +37,14 @@ public with sharing class AccountController {
         }
         
         try {
-            update accounts;
+            List<Database.SaveResult> results = Database.update(accounts, false);
+            for (Database.SaveResult result : results) {
+                if (!result.isSuccess()){
+                    for (Database.Error err : result.getErrors()){
+                        System.debug('Error: '+ err.getStatusCode() + ' ' + err.getMessage());
+                    }
+                }
+            }
         } catch (DmlException e) {//handle saving account data error
             throw new AuraHandledException('Error saving accounts: ' + e.getMessage());
         }

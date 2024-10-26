@@ -1,0 +1,102 @@
+<template>
+    <lightning-card title="IRIS account Data Table" icon-name="standard:account">
+        
+        <!-- Search Box for Account Name -->
+        <div class="slds-p-around_small">
+            <lightning-input
+                type="text"
+                placeholder="🔍 Enter Account Name to search..."
+                onchange={handleSearchChange}
+            ></lightning-input>
+        </div>
+
+        <!-- Data Table -->
+        <div class="slds-box slds-m-around_medium slds-scrollable_y">
+            <table class="slds-table slds-table_bordered slds-table_fixed-layout">
+                <thead>
+                    <tr class="slds-line-height_reset">
+                        <th scope="col">
+                            <span>(10) Account Name </span>
+                            <lightning-button-icon icon-name="utility:sort" variant="bare" alternative-text="Sort" onclick={sortByName}></lightning-button-icon>
+                        </th>
+                        <th scope="col">
+                            <span>Industry </span>
+                            <lightning-button-icon icon-name="utility:sort" variant="bare" alternative-text="Sort" onclick={sortByIndustry}></lightning-button-icon>
+                        </th>
+                        <th scope="col">
+                            <span>Annual Revenue (₹) </span>
+                            <lightning-button-icon icon-name="utility:sort" variant="bare" alternative-text="Sort" onclick={sortByRevenue}></lightning-button-icon>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template for:each={accounts} for:item="account">
+                        <tr key={account.Id} class="slds-hint-parent">
+                            <td>{account.Name}</td>
+                            
+                            <!-- Industry Picklist Field -->
+                            <td>
+                                <lightning-combobox
+                                    options={industryOptions}
+                                    value={account.Industry}
+                                    data-id={account.Id}
+                                    onchange={handleIndustryChange}
+                                    disabled=true
+                                    placeholder="Select Industry"
+                                ></lightning-combobox>
+                            </td>
+                            
+                            <!-- Inline Editable Currency Field for Annual Revenue -->
+                            <td>
+                                <lightning-input
+                                    type="number"
+                                    value={account.AnnualRevenue}
+                                    data-id={account.Id}
+                                    onchange={handleRevenueChange}
+                                ></lightning-input>
+                            </td>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Pagination Controls -->
+        <div class="slds-m-top_medium slds-grid slds-grid_align-spread">
+            <lightning-layout-item flexibility="auto">
+                <lightning-button
+                    class="slds-m-left_xx-large"
+                    label="< Previous"
+                    onclick={handlePreviousPage}
+                    disabled={isFirstPage}
+                    variant="brand-outline"
+                ></lightning-button>
+            </lightning-layout-item>
+            <lightning-layout-item flexibility="auto">
+                <lightning-button
+                    label="Save Changes"
+                    onclick={handleSave}
+                    variant="brand"
+                    disabled={isSaveDisabled}
+                ></lightning-button>
+                &nbsp; Page {pageNumber}
+            </lightning-layout-item>
+            <lightning-layout-item flexibility="auto">
+                    <lightning-button
+                        class="slds-m-right_xx-large"
+                        label="Next >"
+                        onclick={handleNextPage}
+                        disabled={isLastPage}
+                        variant="brand-outline"
+                    ></lightning-button>
+            </lightning-layout-item>
+        </div>
+
+        <!-- Loading Spinner and Overlay -->
+        <template if:true={isLoading}>
+            <div class="loading-overlay">
+                <lightning-spinner alternative-text="Loading..." size="large"></lightning-spinner>
+            </div>
+        </template>
+    </lightning-card>
+</template>
